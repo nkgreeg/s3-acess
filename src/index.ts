@@ -33,7 +33,7 @@ async function main (): Promise<void> {
         forcePathStyle: true
       })
       const result = await client.send(new ListBucketsCommand({ Bucket: action.bucket }))
-      if (result.$metadata.httpStatusCode == 200)
+      if (result.$metadata.httpStatusCode === 200)
         console.log('ok')
       else
         throw new Error(JSON.stringify(result))
